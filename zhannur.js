@@ -1,11 +1,16 @@
-// script.js
+document.getElementById("yesButton").addEventListener("click", acceptInvitation);
+document.getElementById("noButton").addEventListener("click", declineInvitation);
+
 function acceptInvitation() {
-    alert("Отлично! Жду нашей встречи!");
-    // здесь можно добавить анимацию или другие действия при подтверждении
+  alert("Отлично! Жду нашей встречи!");
+}
+
+function declineInvitation() {
+  var noButton = document.getElementById("noButton");
+  var fontSize = parseInt(window.getComputedStyle(noButton).fontSize);
+  if (fontSize > 8) {
+    noButton.style.fontSize = (fontSize - 2) + "px";
+  } else {
+    noButton.style.display = "none";
   }
-  
-  function declineInvitation() {
-    alert("Жаль! Надеюсь, в следующий раз получится.");
-    // здесь можно добавить анимацию или другие действия при отказе
-  }
-  
+}
